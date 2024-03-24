@@ -14,8 +14,6 @@ const ProgresBar = () => {
       const trackLength = documentHeight - windowHeight;
       const scrollPercentage = (scrollTop / trackLength) * 100;
       setValue(scrollPercentage);
-
-      console.log(scrollPercentage);
     };
 
     window.addEventListener("scroll", handleScroll);

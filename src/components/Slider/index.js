@@ -15,36 +15,11 @@ const Slider = () => {
     AOS.init();
   }, []);
 
-  //   const motif = [
-  //     {
-  //       id: 1,
-  //       url: motifSatu,
-  //       alt: "image motif",
-  //     },
-  //     {
-  //       id: 2,
-  //       url: motifDua,
-  //       alt: "image motif",
-  //     },
-  //     {
-  //       id: 3,
-  //       url: motifTiga,
-  //       alt: "image motif",
-  //     },
-  //     {
-  //       id: 4,
-  //       url: motifEmpat,
-  //       alt: "image motif",
-  //     },
-  //     {
-  //       id: 5,
-  //       url: motifLima,
-  //       alt: "image motif",
-  //     },
-  //   ];
-
   return (
-    <div className="carousel max-h-80 w-4/6" data-aos="flip-left">
+    <div
+      className="carousel max-h-80 w-4/6 max-[820px]:w-full"
+      data-aos="flip-left"
+    >
       <div id="slide1" className="carousel-item relative w-full">
         <Image
           src={motifSatu}

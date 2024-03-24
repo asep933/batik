@@ -3,49 +3,35 @@
 import { Card, Rating } from "flowbite-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
-import { Pagination } from "flowbite-react";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import arrow from "/public/arrow.svg";
 
 const Testimoni = () => {
+  const RefTesti = useRef(null);
+
+  // useEffect(() => {
+  //   return () =>
+  //     setInterval(() => {
+  //       RefTesti.current.scrollLeft += 1;
+  //     }, 10);
+  // }, []);
+
   useEffect(() => {
     AOS.init();
   }, []);
 
   return (
-    <div className="py-8 bg-fourth">
+    <div className="py-8 bg-fourth relative">
       <h1 className="text-4xl font-semibold w-full text-center">Testimoni</h1>
-      <div className="px-8 py-8 grid grid-cols-3 gap-4 place-items-center max-[820px]:grid-cols-1">
-        <CardTesti
-          user={"septian"}
-          komentar={
-            "Saya sangat senang dengan hasil batik yang dibuat oleh jasa ini! Desainnya sangat indah dan detailnya luar biasa. Saya pasti akan merekomendasikan kepada teman dan keluarga saya. Terima kasih banyak!"
-          }
-          satu={true}
-          dua={true}
-          tiga={true}
-          empat={false}
-          lima={false}
-        />
-        <CardTesti
-          user={"dani"}
-          komentar={
-            "Pelayanan dari jasa pembuatan batik ini sungguh memuaskan. Mereka sangat ramah dan responsif terhadap kebutuhan saya. Hasil batiknya juga sangat bagus! Sangat merekomendasikan untuk semua orang yang mencari batik berkualitas."
-          }
-          satu={true}
-          dua={true}
-          tiga={true}
-          empat={true}
-          lima={false}
-        />
+
+      <div
+        ref={RefTesti}
+        className="px-8 py-8 flex justify-start items-center gap-4 
+      max-[820px]:flex overflow-hidden max-w-full"
+      >
         <CardTesti
           user={"sandi"}
-          komentar={
-            "Wow! Saya benar-benar terkesan dengan keindahan batik yang dibuat oleh tim ini. Mereka sangat berbakat dalam menciptakan motif-motif yang unik dan menarik. Saya pasti akan menggunakan jasa mereka lagi di masa depan."
-          }
-        />
-        <CardTesti
-          user={"hani"}
           komentar={
             "Pengalaman saya dengan jasa pembuatan batik ini sungguh luar biasa. Mereka sangat profesional dan teliti dalam setiap tahap pembuatan batik. Saya sangat puas dengan hasilnya dan tidak sabar untuk memakainya"
           }
@@ -68,15 +54,41 @@ const Testimoni = () => {
           empat={true}
           lima={false}
         />
+        <CardTesti
+          user={"rifan"}
+          komentar={
+            "Inovasi dan kreativitas dari jasa pembuatan batik ini sungguh mengagumkan. Mereka tidak hanya menghasilkan batik yang cantik, tetapi juga memberikan sentuhan modern yang segar."
+          }
+          satu={true}
+          dua={true}
+          tiga={true}
+          empat={true}
+          lima={false}
+        />
+        <CardTesti
+          user={"yudi"}
+          komentar={
+            "Inovasi dan kreativitas dari jasa pembuatan batik ini sungguh mengagumkan. Mereka tidak hanya menghasilkan batik yang cantik, tetapi juga memberikan sentuhan modern yang segar."
+          }
+          satu={true}
+          dua={true}
+          tiga={true}
+          empat={true}
+          lima={false}
+        />
+
+        <PaginationComponent RefTesti={RefTesti} />
       </div>
-      <PaginationComponent />
     </div>
   );
 };
 
 const CardTesti = ({ user, satu, dua, tiga, empat, lima, komentar }) => {
   return (
-    <Card className="max-w-sm bg-secondary text-fourth" data-aos="zoom-in">
+    <Card
+      className="w-96 max-[820px]:w-64 bg-secondary text-fourth flex-shrink-0"
+      data-aos="zoom-in"
+    >
       <h5 className="text-2xl font-bold tracking-tight text-fourth dark:text-white">
         {user}
       </h5>
@@ -93,21 +105,38 @@ const CardTesti = ({ user, satu, dua, tiga, empat, lima, komentar }) => {
   );
 };
 
-const PaginationComponent = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const onPageChange = (page) => setCurrentPage(page);
-
+const PaginationComponent = ({ RefTesti }) => {
   return (
-    <div className="flex w-full justify-center overflow-x-auto max-[820px]:justify-center">
-      <Pagination
-        layout="navigation"
-        currentPage={currentPage}
-        totalPages={100}
-        onPageChange={onPageChange}
-        showIcons
-      />
-    </div>
+    <>
+      <div className="bg-third absolute top-[50%] left-2 rounded-md bg-opacity-75">
+        <PrevTesti RefTesti={RefTesti} />
+      </div>
+      <div className="bg-third absolute top-[50%] right-2 rounded-md bg-opacity-75">
+        <NextTesti RefTesti={RefTesti} />
+      </div>
+    </>
+  );
+};
+
+const NextTesti = ({ RefTesti }) => {
+  return (
+    <button
+      onClick={() => (RefTesti.current.scrollLeft += 250)}
+      className="animate-pulse transition duration-300"
+    >
+      <Image src={arrow} alt="icon arrow" className="w-12" />
+    </button>
+  );
+};
+
+const PrevTesti = ({ RefTesti }) => {
+  return (
+    <button
+      onClick={() => (RefTesti.current.scrollLeft -= 250)}
+      className="animate-pulse transition duration-300"
+    >
+      <Image src={arrow} alt="icon arrow" className="w-12 rotate-180" />
+    </button>
   );
 };
 

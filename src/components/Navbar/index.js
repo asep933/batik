@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import logo from "/public/logo.webp";
 
 const NavbarComponent = () => {
@@ -26,7 +26,11 @@ const NavbarComponent = () => {
         >
           <div className="text-3xl">
             <Link href={"/"}>
-              <Image src={logo} alt="image logo" width={150} />
+              <Image
+                src={logo}
+                alt="image logo"
+                className={`w-32 max-[820px]:w-28`}
+              />
             </Link>
           </div>
 
@@ -58,7 +62,7 @@ const NavbarComponent = () => {
               onMouseLeave={() => setAnimation({ layanan: false })}
               onMouseEnter={() => setAnimation({ layanan: true })}
             >
-              <Link href={"#footer"}>
+              <Link href={""}>
                 Layanan <span>↓</span>
                 <div
                   className={`p-[2px] bg-third transition duration-300 ease-in-out ${
@@ -133,15 +137,35 @@ const MasukDaftar = ({ animation, setAnimation }) => {
 
 // humberger
 const Humberger = ({ humberger, setHumberger }) => {
+  // const RefHumberger = useRef();
+
+  // console.log("ini refHumberger", RefHumberger);
+
+  // useEffect(() => {
+  //   return () => RefHumberger.current.classList.toggle("swap", "swap-rotate");
+  // }, []);
+
   return (
-    <button
-      onClick={() => setHumberger(!humberger)}
-      className="gap-3 flex flex-col mr-12 min-[820px]:hidden z-30"
-    >
-      <span className="h-[5px] bg-fourth w-12 block"></span>
-      <span className="h-[5px] bg-fourth w-12 block"></span>
-      <span className="h-[5px] bg-fourth w-12 block"></span>
-    </button>
+    <div className="hidden max-[820px]:block">
+      <label className={`btn btn-circle mr-6`}>
+        <input
+          type="checkbox"
+          onClick={() => setHumberger(!humberger)}
+          className="hidden"
+        />
+
+        {/* hamburger icon */}
+        <svg
+          className="swap-off fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 512 512"
+        >
+          <path d="M64,384H448V341.33H64Zm0-106.67H448V234.67H64ZM64,128v42.67H448V128Z" />
+        </svg>
+      </label>
+    </div>
   );
 };
 
@@ -175,7 +199,7 @@ const MenuMobile = ({ humberger, setHumberger }) => {
         onMouseLeave={() => setLayananMobile(false)}
         onMouseEnter={() => setLayananMobile(true)}
       >
-        <Link href={"#footer"}>
+        <Link href={""}>
           Layanan <span>↓</span>
         </Link>
         {layananMobile && (
