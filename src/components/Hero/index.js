@@ -18,12 +18,13 @@ const Hero = () => {
   const [indexModelBatik, setIndexModelBatik] = useState(0);
 
   useEffect(() => {
-    return () =>
-      setInterval(() => {
-        setIndexModelBatik((n) => {
-          return n > 3 ? (n = 0) : n + 1;
-        });
-      }, 2800);
+    const intervalID = setInterval(() => {
+      setIndexModelBatik((n) => {
+        return n > 3 ? (n = 0) : n + 1;
+      });
+    }, 2800);
+
+    return () => clearInterval(intervalID);
   }, []);
 
   useEffect(() => {
