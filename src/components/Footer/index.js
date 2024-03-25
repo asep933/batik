@@ -6,10 +6,18 @@ const Footer = () => {
       <footer className="footer p-10 bg-black text-base-conten">
         <nav>
           <h6 className="footer-title">Layanan</h6>
-          <a className="hover:text-third cursor-pointer">Custom</a>
-          <a className="hover:text-third cursor-pointer">Souvenir</a>
-          <a className="hover:text-third cursor-pointer">Digital</a>
-          <a className="hover:text-third cursor-pointer">Eksklusif</a>
+          <Link href={"#customs"} className="hover:text-third cursor-pointer">
+            Custom
+          </Link>
+          <Link href={"#souvenir"} className="hover:text-third cursor-pointer">
+            Souvenir
+          </Link>
+          <Link href={"#digital"} className="hover:text-third cursor-pointer">
+            Digital
+          </Link>
+          <Link href={"#eksklusif"} className="hover:text-third cursor-pointer">
+            Eksklusif
+          </Link>
         </nav>
         <nav>
           <h6 className="footer-title">Kontak</h6>

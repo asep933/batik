@@ -45,7 +45,7 @@ const Login = () => {
                   <label className="label">
                     <p className="label-text-alt">
                       Belum punya akun?{" "}
-                      <Link className="hover:text-third" href={"/daftar"}>
+                      <Link className="hover:text-third" href={"/daftarPage"}>
                         Daftar
                       </Link>
                     </p>
@@ -53,7 +53,7 @@ const Login = () => {
                 </div>
                 <div className="form-control mt-6">
                   <button
-                    className="bg-third transition ease-out duration-300 
+                    className="text-fourth bg-third transition ease-out duration-300 
                 hover:bg-opacity-80 p-2 hover:animate-pulse"
                   >
                     Login
