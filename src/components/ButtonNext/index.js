@@ -11,7 +11,8 @@ const ButtonNext = ({ setIndexModelBatik }) => {
           return n > 3 ? (n = 0) : n + 1;
         })
       }
-      className={`animate-pulse hover:animate-none transition duration-300`}
+      className={`z-50 animate-pulse hover:animate-none transition 
+      duration-300 max-[820px]:hidden`}
     >
       <Image src={arrow} alt="icon arrow" className="w-12" />
     </button>

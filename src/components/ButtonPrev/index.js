@@ -9,7 +9,8 @@ const ButtonPrev = ({ setIndexModelBatik }) => {
           return n < 1 ? (n = 4) : n - 1;
         })
       }
-      className={`animate-pulse hover:animate-none transition duration-300`}
+      className={`z-50 animate-pulse hover:animate-none transition
+      duration-300 max-[820px]:hidden`}
     >
       <Image src={arrow} alt="icon arrow" className="w-12 rotate-180" />
     </button>

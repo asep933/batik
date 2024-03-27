@@ -1,8 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { Button } from "flowbite-react";
-import { HiOutlineArrowRight } from "react-icons/hi";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import arrow from "/public/arrow.svg";
