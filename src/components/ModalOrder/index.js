@@ -62,7 +62,7 @@ const ModalOrder = () => {
               </h3>
               <div className="flex flex-col gap-2">
                 <label htmlFor="nama" className="font-semibold">
-                  Nama
+                  Email
                 </label>
                 <input
                   onChange={handleNama}
@@ -70,7 +70,7 @@ const ModalOrder = () => {
                   required
                   type="text"
                   name="nama"
-                  placeholder="nama..."
+                  placeholder="email..."
                   className="input input-bordered w-full"
                 />
               </div>

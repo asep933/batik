@@ -18,7 +18,7 @@ const Layanan = () => {
   }, []);
 
   return (
-    <div className="bg-primary pb-24 flex flex-col gap-y-4 w-full">
+    <div className="bg-primary pb-24 pt-20 flex flex-col gap-y-4 w-full">
       <h1 className="text-4xl font-semibold text-fourth pb-12 w-full text-center">
         Layanan Kami
       </h1>

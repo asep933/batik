@@ -1,9 +1,12 @@
 import Link from "next/link";
+import TentangPerusahaan from "./TentangPerusahaan";
 
 const Footer = () => {
   return (
     <div className="bg-black text-fourth" id="footer">
-      <footer className="footer p-10 bg-black text-base-conten">
+      <footer className="footer justify-between space-x-4 p-10 bg-black text-base-conten">
+        <TentangPerusahaan />
+
         <nav>
           <h6 className="footer-title">Layanan</h6>
           <Link href={"#customs"} className="hover:text-third cursor-pointer">

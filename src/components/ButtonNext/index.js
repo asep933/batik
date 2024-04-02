@@ -8,7 +8,7 @@ const ButtonNext = ({ setIndexModelBatik }) => {
     <button
       onClick={() =>
         setIndexModelBatik((n) => {
-          return n > 3 ? (n = 0) : n + 1;
+          return n > 1 ? (n = 0) : n + 1;
         })
       }
       className={`z-50 animate-pulse hover:animate-none transition 

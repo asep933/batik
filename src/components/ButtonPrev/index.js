@@ -6,7 +6,7 @@ const ButtonPrev = ({ setIndexModelBatik }) => {
     <button
       onClick={() =>
         setIndexModelBatik((n) => {
-          return n < 1 ? (n = 4) : n - 1;
+          return n < 1 ? (n = 1) : n - 1;
         })
       }
       className={`z-50 animate-pulse hover:animate-none transition

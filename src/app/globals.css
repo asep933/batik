@@ -16,6 +16,21 @@
   transform: translate(-50%, -50%);
 }
 
+/* .animate {
+  animation: asteroid 200s infinite;
+  animation-fill-mode: forwards;
+  @apply transition ease-in-out;
+}
+
+@keyframes asteroid {
+  form {
+    top: 0px;
+  }
+  to {
+    bottom: 0px;
+  }
+} */
+
 @media (min-width: 320px) and (max-width: 820px) {
   .mobile-menu {
     @apply hidden;
