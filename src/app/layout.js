@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         <ContextInformasiProvider>
           <ProgresBar />
           <NavbarComponent />
-          <main>{children}</main>
+          <main className="bg-primary">{children}</main>
           <ButtonGoTop />
           <ButtonWhatsApp />
           <Footer />

@@ -7,6 +7,7 @@ import BannerCarousel from "../BannerCarousel";
 import Link from "next/link";
 import Image from "next/image";
 import AsteroidElement from "/public/asteroid.svg";
+import ModelBatik from "../ModelBatik";
 
 const Hero = () => {
   useEffect(() => {
@@ -18,23 +19,12 @@ const Hero = () => {
       className="relative h-auto max-[820px]:h-auto bg-gradient-to-r 
     from-[#07080a] to-primary pt-16"
     >
-      <Asteroid />
-      <BannerCarousel />
-      <CTA />
+      <div className="bg-[url('/batik-motif.png')]">
+        <Asteroid />
+        <BannerCarousel />
+        <ModelBatik />
+      </div>
     </div>
-  );
-};
-
-const CTA = () => {
-  return (
-    <Link
-      href={"#tentang"}
-      className="absolute btn btn-outline hover:text-white hover:bg-third bottom-28 left-16 
-      max-[820px]:bottom-[25px]
-      max-[820px]:left-4 max-[820px]:animate-none max-[820px]:scale-50 origin-left"
-    >
-      <p className="text-black">Selengkapnya</p>
-    </Link>
   );
 };
 

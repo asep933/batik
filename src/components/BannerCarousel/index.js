@@ -33,9 +33,9 @@ const BannerCarousel = () => {
 
   return (
     <div>
-      <div className="carousel w-full h-[98vh] max-[820px]:h-[28vh] scroll-smooth">
+      <div className="relative carousel w-full h-[98vh] max-[820px]:h-[27vh] scroll-smooth">
         <div id="banner1" className="carousel-item relative w-full">
-          <Image src={bannerSatu} className="w-full" />
+          <Image src={bannerDua} className="w-full" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#banner2" className="btn btn-circle animate-pulse">
               ❮
@@ -46,7 +46,7 @@ const BannerCarousel = () => {
           </div>
         </div>
         <div id="banner2" className="carousel-item relative w-full">
-          <Image src={bannerDua} className="w-full" />
+          <Image src={bannerSatu} className="w-full" />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
             <a href="#banner1" className="btn btn-circle animate-pulse">
               ❮
