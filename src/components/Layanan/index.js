@@ -30,28 +30,28 @@ const Layanan = () => {
           className="max-w-full grid grid-cols-2 gap-8 px-52 overflow-auto
         max-[820px]:grid-cols-1 max-[820px]:px-4"
         >
-          <div id="customs">
+          <div id="customs" data-aos="fade-right">
             <CardLayanan
               batikImage={batikCustom}
               title={"Custom"}
               buttonModal={<ModalOrder />}
             />
           </div>
-          <div id="souvenir">
+          <div id="souvenir" data-aos="fade-left">
             <CardLayanan
               batikImage={batikSouvenir}
               title={"Souvenir"}
               buttonModal={<ModalOrder />}
             />
           </div>
-          <div id="digital">
+          <div id="digital" data-aos="fade-right">
             <CardLayanan
               batikImage={batikDigital}
               title={"Digital"}
               buttonModal={<ModalOrder />}
             />
           </div>
-          <div id="eksklusif">
+          <div id="eksklusif" data-aos="fade-left">
             <CardLayanan
               batikImage={batikEksklusif}
               title={"Eksklusif"}
@@ -66,7 +66,7 @@ const Layanan = () => {
 
 const CardLayanan = ({ title, batikImage, buttonModal }) => {
   return (
-    <div className="card min-w-16 bg-fourth shadow-xl" data-aos="zoom-in">
+    <div className="card min-w-16 bg-fourth shadow-xl">
       <figure className="px-10 pt-10">
         <div className="overflow-hidden h-44">
           <Image
